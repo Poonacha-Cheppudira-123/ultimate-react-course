@@ -144,10 +144,17 @@ function getBook(id) {
 }
 
 // Destructuring
-
-const book = getBook(2)
+const book = getBook(1)
 book;
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } = book;
 console.log(author, title, genres);
 const [ primaryGenre, secondaryGenre ] = genres;
 console.log(primaryGenre, secondaryGenre);
+
+// Rest and Spread Operator
+const [ firstGenre, secondGenre, ...otherGenres ] = genres;
+console.log(firstGenre, secondGenre, otherGenres);
+const newGenres = [ ...genres, "epic fantasy" ];
+newGenres;
+const updatedBook = { ...book, moviePublicationDate: "2001-12-19", pages: 1210 };
+updatedBook;
